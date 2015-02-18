@@ -1,16 +1,18 @@
+true: debug
 true: annot
-true: warn_error
-false: use_sparse
 true: thread
-true: bin-annot
-true: package(str)
+true: warn_error
 true: package(lwt)
 true: package(lwt.preemptive)
 true: package(lwt.unix)
-true: package(lwt.extra)
-true: package(num)
-true: package(bigarray)
+true: package(lwt.ssl)
+true: package(oUnit)
+true: package(bz2)
+true: package(str)
 true: package(dynlink)
-
-# pa_LWT syntax extension
-<*.ml> : package(lwt.syntax), syntax(pa_lwt), syntax(camlp4o)
+true: package(quickcheck)
+true: pp(camlp4of)
+true: package(snappy)
+"src":include
+<**/edamandeve.*{byte,native}>: is_main
+<src/**/*.ml> : camlp4of, maybe_use_bisect
