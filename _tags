@@ -14,5 +14,6 @@ true: package(quickcheck)
 true: pp(camlp4of)
 true: package(snappy)
 "src":include
+"src/daemon":include
 <**/edamandeve.*{byte,native}>: is_main
-<src/**/*.ml> : camlp4of, maybe_use_bisect
+#<src/**/*.ml> : camlp4of, maybe_use_bisect
