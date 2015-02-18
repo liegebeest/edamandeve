@@ -1,3 +1,5 @@
+open Lwt
+
 module CoupleState =
   struct
     type t =
@@ -66,14 +68,14 @@ let rec edam cs =
  let cs = CoupleState.he_do cs in
  let () = CoupleLog.log_do cs in
  let () = CoupleLog.log_happy cs in
- lwt () = Lwt_unix.sleep (CoupleState.he_out cs) in
+ Lwt_unix.sleep (CoupleState.he_out cs) >>= fun () ->
  edam cs
 
 let rec ava cs =
  let cs = CoupleState.she_do cs in
  let () = CoupleLog.log_do cs in
  let () = CoupleLog.log_happy cs in
- lwt () = Lwt_unix.sleep (CoupleState.she_out cs) in
+ Lwt_unix.sleep (CoupleState.she_out cs) >>= fun () ->
  ava cs
 
 let main =
