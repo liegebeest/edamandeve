@@ -3,16 +3,11 @@ true: annot
 true: thread
 true: warn_error
 true: package(lwt)
-true: package(lwt.preemptive)
 true: package(lwt.unix)
-true: package(lwt.ssl)
 true: package(oUnit)
-true: package(bz2)
 true: package(str)
 true: package(dynlink)
-true: package(quickcheck)
 true: pp(camlp4of)
-true: package(snappy)
 "src": include
 "src/daemon": include
 <src/**/edamandeve.ml> or "prog.byte": pkg_unix
